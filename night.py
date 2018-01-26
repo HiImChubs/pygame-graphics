@@ -27,30 +27,14 @@ WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 YELLOW = (255, 255, 200)
 
-
-#Make Stars
+''' Make stars '''
 stars = []
 for i in range(200):
     x = random.randrange(0, 800)
     y = random.randrange(0, 400)
-    r = random.randrange(1, 4)
+    r = random.randrange(1, 5)
     s = [x, y, r, r]
     stars.append(s)
-
-
-def draw_cloud(x, y):
-    pygame.draw.ellipse(screen, WHITE, [x, y + 20, 40 , 40])
-    pygame.draw.ellipse(screen, WHITE, [x + 60, y + 20, 40 , 40])
-    pygame.draw.ellipse(screen, WHITE, [x + 20, y + 10, 25, 25])
-    pygame.draw.ellipse(screen, WHITE, [x + 35, y, 50, 50])
-    pygame.draw.rect(screen, WHITE, [x + 20, y + 20, 60, 40])
-
-''' clouds '''
-draw_cloud(50, 150)
-draw_cloud(250, 75)
-draw_cloud(350, 125)
-draw_cloud(450, 175)
-draw_cloud(650, 100)
 
 # Game loop
 done = False
@@ -76,7 +60,6 @@ while not done:
     pygame.draw.rect(screen, GREEN, [0, 400, 800, 200])
 
     ''' fence '''
-
     y = 380
     for x in range(5, 800, 30):
         post = [x+5, y], [x+10, y+5], [x+10, y+40], [x, y+40], [x, y+5]

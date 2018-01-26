@@ -25,7 +25,15 @@ BLUE = (0, 0, 255)
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 ORANGE = (255, 125 , 0)
-    
+
+
+def draw_cloud(x, y):
+    pygame.draw.ellipse(screen, WHITE, [x, y + 20, 40 , 40])
+    pygame.draw.ellipse(screen, WHITE, [x + 60, y + 20, 40 , 40])
+    pygame.draw.ellipse(screen, WHITE, [x + 20, y + 10, 25, 25])
+    pygame.draw.ellipse(screen, WHITE, [x + 35, y, 50, 50])
+    pygame.draw.rect(screen, WHITE, [x + 20, y + 20, 60, 40])
+
 
 # Game loop
 done = False
@@ -38,6 +46,13 @@ while not done:
             done = True
 
 
+
+    '''draw cloud'''
+    draw_cloud(50, 150)
+    draw_cloud(250, 75)
+    draw_cloud(350, 125)
+    draw_cloud(450, 175)
+    draw_cloud(650, 100)
     # Game logic (Check for collisions, update points, etc.)
     ''' leave this section alone for now ''' 
 
